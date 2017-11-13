@@ -9,7 +9,7 @@
 
 void my_putchar(char c);
 
-int disp_stdrag(char *s)
+int disp_stdarg(char *s)
 {
 	int counter = 0;
 	int i = 1;
