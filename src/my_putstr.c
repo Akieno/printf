@@ -5,11 +5,9 @@
 ** 
 */
 
-#include <unistd.h>
-#include <stdio.h>
-void my_putchar(char c);
+#include "my.h"
 
-int disp_str(char *str)
+int my_putstr(char *str)
 {
 	int counter = 0;
 
@@ -17,5 +15,5 @@ int disp_str(char *str)
 		my_putchar(str[counter]);
 		counter++;
 	}
-	return (0);
+	return (counter);
 }

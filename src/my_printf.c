@@ -5,24 +5,34 @@
 ** 
 */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "my.h"
 
-int disp_str(char *str);
-
-int my_printf(const char *format, char *argument)
+int my_printf(const char *format, ...)
 {
-	if (format == "%%") {
-		ft_putchar('\n');
-		return (0);
+	int i = 0;
+	va_list va;
+	va_start (va, format);
+
+	while (format[i] != '\0') {
+		if (format[i] == '%') {
+			i++;
+			if (format[i] == '%') {
+				my_putchar('\n');
+				return (0);
+			}
+			else if (format[i] == 'd' || format[i] == 'i') {
+				int c = va_arg(va, int);
+				my_putnbr(c);
+			}
+			else if (format[i] == 's') {
+				char *string = va_arg(va, char *);
+				my_putstr(string);
+			}
+		} else {
+			my_putchar(format[i]);
+		}
+		i++;
 	}
-	if (format == 
-
-	disp_str(argument);
-}
-
-int main(void)
-{
-	my_printf(0, "Test");
+	va_end (va);
 	return (0);
 }

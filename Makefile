@@ -13,9 +13,10 @@ CFLAGS  = -I ./include -Wall -Werror -Wextra
 
 NAME    =      libmy.a
 
-SRCS    =       src/main.c		\
-		src/sum_stdarg.c	\
-		src/disp_stdarg.c	\
+SRCS    =	src/my_printf.c	\
+		src/my_putchar.c \
+		src/my_putnbr.c \
+		src/my_putstr.c
 
 OBJS    = $(SRCS:.c=.o)
 
@@ -23,9 +24,11 @@ OBJS    = $(SRCS:.c=.o)
 all:    $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC)  $(OBJS) -o $(NAME) $(CFLAGS)
-	ar rc  $(NAME) $(OBJ)
+	ar -crus $@ $(OBJS)
 	ranlib $(NAME)
+
+./%o : ./%c
+	$(CC) -o $@ -c $< $(CFLAGS)
 
 clean:
 	$(RM) $(OBJS)

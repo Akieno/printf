@@ -1,0 +1,3 @@
+
+compile le main avec la lib
+gcc src/main.c -o test.out -I ./include -L. -lmy
