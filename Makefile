@@ -11,13 +11,11 @@ RM      = rm -f
 
 CFLAGS  = -I ./include -Wall -Werror -Wextra
 
-LDFLAGS =
+NAME    =      libmy.a
 
-NAME    =      my 
-
-SRCS    =       main.c		\
-		sum_stdarg.c	\
-		disp_stdarg.c	\
+SRCS    =       src/main.c		\
+		src/sum_stdarg.c	\
+		src/disp_stdarg.c	\
 
 OBJS    = $(SRCS:.c=.o)
 
@@ -25,7 +23,9 @@ OBJS    = $(SRCS:.c=.o)
 all:    $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+	$(CC)  $(OBJS) -o $(NAME) $(CFLAGS)
+	ar rc  $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 clean:
 	$(RM) $(OBJS)
