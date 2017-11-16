@@ -22,7 +22,7 @@ int my_printf(const char *format, ...)
 				int num = va_arg(va, int);
 				my_putnbr(num);
 			}
-			else if (format[i] == 's') {
+			else if (format[i] == 's' || format[i] == 'S') {
 				char *string = va_arg(va, char *);
 				my_putstr(string);
 			}
