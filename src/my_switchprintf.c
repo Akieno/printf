@@ -14,25 +14,27 @@ int my_printf(const char *format, ...)
 	va_start (va, format);
 
 	while (format[i] != '\0') {
-		if (format[i] == '%') {
+		switch ('%') {
 			i++;
-			if (format[i] == '%')
+			case '%':
 				my_putchar('%');
-			else if (format[i] == 'd' || format[i] == 'i') {
+				break;
+			case 'd'/*i*/:
 				int num = va_arg(va, int);
 				my_putnbr(num);
-			}
-			else if (format[i] == 's' || format[i] == 'S') {
+				break;
+			case 's'/*S*/:
 				char *string = va_arg(va, char *);
 				my_putstr(string);
-			}
-			else if (format[i] == 'c') {
+				break;
+			case 'c':
 				int c = va_arg(va, int);
 				my_putchar(c);
-			}
-		} else {
-			my_putchar(format[i]);
+				break;
 		}
+		default:
+			my_putchar(format[i]);
+			break;
 		i++;
 	}
 	va_end (va);

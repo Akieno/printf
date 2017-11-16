@@ -2,7 +2,8 @@
 
 int main(void)
 {
-	my_printf("Je test mais %% %c %s %d", 48, "ca va faire mal", 36);
+	   printf("Je test mais %% %c %s %d\n", 'c', "aie", 36);
+	my_printf("Je test mais %% %c %s %d\n", 'c', "aie", 36);
 
 	return (0);
 }
