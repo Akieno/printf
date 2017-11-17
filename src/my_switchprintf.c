@@ -14,7 +14,7 @@ int my_printf(const char *format, ...)
 	va_start (va, format);
 
 	while (format[i] != '\0') {
-		switch ('%') {
+		switch (format[i] == '%') {
 			i++;
 			case '%':
 				my_putchar('%');
