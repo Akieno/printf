@@ -17,10 +17,8 @@ SRCS    =	src/my_printf.c	\
 		src/my_putchar.c \
 		src/my_putnbr.c \
 		src/my_putstr.c \
-		src/my_putunsignednbr.c \
-		src/my_putoct.c \
-		src/my_puthex.c \
-		src/my_puthexmaj.c
+		src/my_putbase.c \
+		src/my_putbasemin.c
 
 OBJS    = $(SRCS:.c=.o)
 

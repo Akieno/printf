@@ -37,13 +37,19 @@ int my_printf(const char *format, ...)
 					my_putchar(va_arg(va, int));
 					break;
 				case 'u':
-					my_putunsignednbr(va_arg(va, unsigned int));
+					my_putbase(va_arg(va, unsigned int), 10);
 					break;
 				case 'o':
-					my_putoct(va_arg(va, unsigned int));
+					my_putbase(va_arg(va, unsigned int), 8);
 					break;
 				case 'x':
-					my_puthex(va_arg(va, unsigned int));
+					my_putbasemin(va_arg(va, unsigned int), 16);
+					break;
+				case 'X':
+					my_putbase(va_arg(va, unsigned int), 16);
+					break;
+				case 'b':
+					my_putbase(va_arg(va, unsigned int), 2);
 					break;
 			}
 		} else {

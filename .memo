@@ -1,6 +1,0 @@
-
-Tableau de pointeur sur fonction (difficile ?)
-ou switch (+facile ?)
-
-compile le main avec la lib
-gcc src/main.c -o test.out -I ./include -L. -lmy
