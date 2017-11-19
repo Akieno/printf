@@ -10,6 +10,7 @@ int my_putnbr(int n);
 int my_putunsignednbr(unsigned int n);
 int my_putoct(unsigned int n);
 int my_puthex(unsigned int n);
+int my_puthexmaj(unsigned int n);
 int my_putstr(char *str);
 void my_putchar(char c);
 
