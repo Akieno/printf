@@ -36,6 +36,12 @@ int my_printf(const char *format, ...)
 				case 'c':
 					my_putchar(va_arg(va, int));
 					break;
+				case 'u':
+					my_putunsignednbr(va_arg(va, unsigned int));
+					break;
+				case 'o':
+					my_putoct(va_arg(va, unsigned int));
+					break;
 			}
 		} else {
 			my_putchar(format[i]);

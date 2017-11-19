@@ -1,24 +1,17 @@
 /*
 ** EPITECH PROJECT, 2017
-** my_putnbr
+** my_putunsignednr
 ** File description:
 ** 
 */
 
 #include "my.h"
 
-int	my_putnbr(int n)
+int	my_putunsignednbr(unsigned int n)
 {
 	int	i;
 
 	i = 0;
-	if (n == -2147483648)
-		return (my_putstr("-2147483648"));
-	else if (n < 0) {
-		my_putchar('-');
-		i++;
-		n = -n;
-	}
 	if (n > 9) {
 		i += my_putnbr(n / 10);
 		i += my_putnbr(n % 10);
