@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2017
-** disp_str
+** my_putstr
 ** File description:
 ** 
 */
